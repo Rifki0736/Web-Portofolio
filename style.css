@@ -1,0 +1,230 @@
+/* RESET DASAR (Agar tampilan konsisten di semua browser) */
+* {
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* VARIABEL WARNA (Ganti kode warna di sini jika ingin ubah tema) */
+:root {
+    
+    --primary-color: #FFD400;/*warna teks atas header*/
+    --accent-color: #000784;/*warna teks body sama button*/
+    --text-color: #000000;/*warna teks body khusus*/
+    --bg-light: #F8F9FA;/*warna body*/
+}
+
+body {
+    line-height: 1.9;
+    color: var(--text-color);
+}
+
+/* NAVIGASI */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1A3263; /*warna navbar*/
+    padding: 1rem 5%;
+    box-shadow: 0 2px 5px #1e84b8; /*warna bayangan navbar*/
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: none; /* Sembunyikan di desktop */
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* COMPONENT UMUM */
+.container {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+}
+
+/* PROJECT GRID */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    max-width: 800px; /* Tambahan opsional: agar lebarnya tidak terlalu memanjang di layar laptop */
+    margin-left: auto; /* Tambahan opsional: posisikan ke tengah */
+    margin-right: auto; /* Tambahan opsional: posisikan ke tengah */
+}
+
+.card {
+    background: #75b3b86d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- STYLE BARU UNTUK ABOUT SECTION --- */
+
+/* Pembungkus konten About agar bisa diatur tata letaknya */
+.about-content {
+    display: flex; /* Mengaktifkan mode baris (sebelahan) */
+    align-items: center; /* Teks dan gambar rata tengah secara vertikal */
+    justify-content: center; /* Konten berada di tengah layar */
+    gap: 30px; /* Jarak antara foto dan teks */
+    max-width: 900px; /* Agar konten tidak terlalu melebar di layar besar */
+    margin: 0 auto; /* Agar pembungkus ini posisinya di tengah */
+    text-align: left; /* Teks deskripsi rata kiri agar lebih mudah dibaca */
+}
+
+/* Style khusus untuk Foto Profil */
+.profile-img {
+    width: 180px;          /* Ukuran lebar tetap yang lebih kecil */
+    height: 180px;         /* Tinggi disamakan agar jadi persegi */
+    object-fit: cover;     /* PENTING: Agar foto tidak gepeng/penyet jika aslinya bukan persegi */
+    border-radius: 20px;    /* Membuat foto menjadi lingkaran penuh */
+    border: 4px solid #1e84b8; /* Menambahkan bingkai warna kuning */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Menambahkan efek bayangan agar "pop out" */
+    flex-shrink: 0;        /* Agar ukuran foto tidak mengecil saat layar menyempit */
+}
+
+.information-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto 0;
+    text-align: left; /* Teks rata kiri agar mudah dibaca */
+}
+
+.information-card1 {
+    background: white; /* Anda bisa ganti dengan warna rgb(205, 186, 186) jika ingin seragam dengan penugasan */
+    padding: 25px;
+    border-left: 5px solid var(--accent-color); /* Garis tebal di sebelah kiri */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.information-card2 {
+    background: white; /* Anda bisa ganti dengan warna rgb(205, 186, 186) jika ingin seragam dengan penugasan */
+    padding: 25px;
+    border-left: 5px solid var(--primary-color); /* Garis tebal di sebelah kiri */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.information-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.information-date {
+    font-size: 0.9rem;
+    color: #666;
+    background: #e9ecef;
+    padding: 3px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE (Untuk HP) */
+@media (max-width: 768px) {
+    /* --- Masukkan ini DI DALAM kurung kurawal @media (max-width: 768px) --- */
+
+    /* Mengubah tata letak About menjadi kolom (atas-bawah) di HP */
+    .about-content {
+        flex-direction: column;
+        text-align: center; /* Kembalikan teks jadi rata tengah di HP */
+    }
+
+    .profile-img {
+        width: 150px; /* Perkecil sedikit lagi fotonya di HP */
+        height: 150px;
+        margin-bottom: 20px; /* Beri jarak di bawah foto sebelum teks */
+    }
+    .nav-links {
+        display: none; /* Kita akan aktifkan ini nanti pakai JS */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: white;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background: var(--text-color);
+    }
+}
